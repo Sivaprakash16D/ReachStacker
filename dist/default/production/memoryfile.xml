@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/production/ReachStacker1.0.18.X.production.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>8192</length>
+      <used>5494</used>
+      <free>2698</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>147072</length>
+      <used>93888</used>
+      <free>53184</free>
+    </memory>
+  </executable>
+</project>

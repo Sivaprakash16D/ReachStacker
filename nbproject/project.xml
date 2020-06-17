@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>ReachStacker1.0.18</name>
+            <name>ReachStacker1.0.16</name>
+            <name>ReachStacker1.0.15</name>
+            <name>ReachStacker1.0.14</name>
+            <name>ReachStacker1.0.13</name>
+            <name>ReachStacker1.0.12</name>
+            <name>ReachStacker1.0.11</name>
+            <name>ReachStacker1.0.10</name>
+            <name>ReachStacker1.0.9.1</name>
+            <name>ReachStacker1.0.9</name>
+            <name>ReachStacker1.0.8</name>
+            <name>ReachStacker1.0.7</name>
+            <name>ReachStacker1.0.6</name>
+            <name>ReachStacker1.0.5</name>
+            <name>ReachStacker1.0.4</name>
+            <name>ReachStacker1.0.3</name>
+            <name>ReachStacker1.0.2</name>
+            <creation-uuid>68a295f9-ee69-4f70-b067-be1ed2f16b16</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <c-extensions>c</c-extensions>
+            <cpp-extensions/>
+            <header-extensions>h</header-extensions>
+            <asminc-extensions/>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <sourceRootList>
+                <sourceRootElem>.</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>default</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+            <make-dep-projects/>
+        </data>
+    </configuration>
+</project>
