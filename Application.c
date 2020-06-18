@@ -361,8 +361,12 @@ void Periodic_Report_Assign(void)
 {
     char i=0;
     ReadRTC_DateTime();
-    RT_Count +=(long)(TimeOut_Cnt3/1000);
-    Write_E2(ERT_Count,(char *)&RT_Count,sizeof(RT_Count));Delay_ms(10);
+    if(Run_Time_Update != 1)
+    {
+        RT_Count +=(long)(TimeOut_Cnt3/1000);
+        Write_E2(ERT_Count,(char *)&RT_Count,sizeof(RT_Count));Delay_ms(10);
+    }
+    Run_Time_Update = 0;
 	Periodic_Report.Date = RTC.Date;
 	Periodic_Report.Month = RTC.Month;
 	Periodic_Report.Year = RTC.Year;
