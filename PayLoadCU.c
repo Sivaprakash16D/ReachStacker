@@ -356,7 +356,7 @@ void namechange_via_RS232(void)
 		//ReceivedFlag =0;
 	}
 }
-
+char Run_Time_Update = 0;
 void Record_Management(void)
 {
     if((Flag.Periodic_Send_Flag == 1)&& (TimerCntr2 == 0))
@@ -397,7 +397,9 @@ void Record_Management(void)
      if((Input1sts_Bit == 2)&& (TimerCntr2 == 0)&&(Input1sts_Bit2 == 0))
     {
          
-        
+        RT_Count +=(long)(TimeOut_Cnt3/1000);
+        Write_E2(ERT_Count,(char *)&RT_Count,sizeof(RT_Count));Delay_ms(10);
+        TimeOut_Cnt3 = 0;
         if(!PowerOn_Bit2 == 1)
         SMS_Alert(2);
         Periodic_Report_Assign();
@@ -408,6 +410,7 @@ void Record_Management(void)
         Input1sts_Bit = 0;
         Input1sts_Bit1 = 0;
         PowerOn_Bit1 = PowerOn_Bit2 = 0;
+        Run_Time_Update = 1;
     }
      if((Input2sts_Bit == 1)&& (TimerCntr2 == 0)&&(Input2sts_Bit1 == 0))
     {
@@ -605,13 +608,13 @@ void MainScreenDisplay()
 	else if(IBODYUP !=	Application_Setting.Input2Logic)
         memcpy(LcdDispBuff+14,"0",1);
    
-    Minute = (((TimeOut_Cnt3/1000)+RT_Count1)/60);  // Run Time Calculation
-                if(Minute>60)
-                     Minute = (int)((((TimeOut_Cnt3/1000)+RT_Count1)/60)%60);
-        Hour = (int)((((TimeOut_Cnt3/1000)+RT_Count1)/60)/60);
-    if(IPARKING == Application_Setting.Input1Logic)
-    sprintf((char *)(LcdDispBuff+16),"RT:%02d:%02d:%02d      ",Hour,Minute,(int)((((TimeOut_Cnt3/1000)+RT_Count1)%60)));
-    else
+//    Minute = (((TimeOut_Cnt3/1000)+RT_Count1)/60);  // Run Time Calculation
+//                if(Minute>60)
+//                     Minute = (int)((((TimeOut_Cnt3/1000)+RT_Count1)/60)%60);
+//        Hour = (int)((((TimeOut_Cnt3/1000)+RT_Count1)/60)/60);
+//    if(IPARKING == Application_Setting.Input1Logic)
+//    sprintf((char *)(LcdDispBuff+16),"RT:%02d:%02d:%02d      ",Hour,Minute,(int)((((TimeOut_Cnt3/1000)+RT_Count1)%60)));
+//    else
     sprintf(LcdDispBuff+16,"%02u/%02u/%02d  %02u:%02u",RTC.Date,RTC.Month,(RTC.Year%2000),RTC.Hour,RTC.Minute);
     TwoLineDisplay(LcdDispBuff,LcdDispBuff+16,0);
  //   TwoLineDisplay(ReceiveBuff,ReceiveBuff+16,0);

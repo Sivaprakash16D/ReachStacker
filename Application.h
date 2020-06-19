@@ -707,3 +707,4 @@ void Interrupt_Check(void);
 unsigned char RT_Temp_Date = 0;
 unsigned long RT_Count = 0,RT_Count1 = 0;
 
+extern char Run_Time_Update ;

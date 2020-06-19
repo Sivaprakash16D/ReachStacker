@@ -365,6 +365,7 @@ void Periodic_Report_Assign(void)
     {
         RT_Count +=(long)(TimeOut_Cnt3/1000);
         Write_E2(ERT_Count,(char *)&RT_Count,sizeof(RT_Count));Delay_ms(10);
+        TimeOut_Cnt3 = 0;
     }
     Run_Time_Update = 0;
 	Periodic_Report.Date = RTC.Date;
@@ -374,7 +375,7 @@ void Periodic_Report_Assign(void)
 	Periodic_Report.Minute = RTC.Minute;
 	Periodic_Report.Second = RTC.Second;
 	Periodic_Report.SumWeight = AllChannel.CurWeight;
-    TimeOut_Cnt3 = 0;
+    
     for(i=0;i<NO_OF_CH;i++)
     {
         Periodic_Report.RawADC[i] = Loadcell[i].RawADC;          

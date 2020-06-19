@@ -162,12 +162,12 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100              0x11c2          0x1aa3  (6819)
-.const                      0x12c2              0x2556          0x3801  (14337)
-.text                       0x3818              0xb85c         0x1148a  (70794)
-.dinit                      0xf074               0x1f4           0x2ee  (750)
-.text                       0xf268               0x318           0x4a4  (1188)
+.const                      0x12c2              0x253e          0x37dd  (14301)
+.text                       0x3800              0xb7f0         0x113e8  (70632)
+.dinit                      0xeff0               0x1f4           0x2ee  (750)
+.text                       0xf1e4               0x318           0x4a4  (1188)
 
-                 Total "program" memory used (bytes):        0x16ec0  (93888) 63%
+                 Total "program" memory used (bytes):        0x16dfa  (93690) 63%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -359,7 +359,8 @@ External Symbols in Data Memory (by address):
                     0x095e                  _TimeoutCounter
                     0x0962                  _TimeOut_Cnt2
                     0x0966                  _TimeOut_Cnt3
-                    0x096a                  _Received_Char
+                    0x096a                  _Run_Time_Update
+                    0x096b                  _Received_Char
                     0x096c                  _DisplayFlag
                     0x096e                  _Enb_Volt
                     0x0970                  _Total_Volt
@@ -904,7 +905,7 @@ External Symbols in Data Memory (by name):
                     0x080a                  _ReceivedChar
                     0x080c                  _ReceivedChar2
                     0x0938                  _ReceivedFlag
-                    0x096a                  _Received_Char
+                    0x096b                  _Received_Char
                     0x0a40                  _Received_PGN
                     0x08ba                  _RecordCursor
                     0x0a56                  _RecordOffset
@@ -918,6 +919,7 @@ External Symbols in Data Memory (by name):
                     0x09a8                  _RetAdc
                     0x087a                  _RunInput
                     0x086c                  _RunTime
+                    0x096a                  _Run_Time_Update
                     0x0908                  _RxCANPGN
                     0x09ec                  _RxCANPGN1
                     0x0909                  _RxCompleteFlag
@@ -1085,414 +1087,414 @@ External Symbols in Program Memory (by address):
                   0x0012b6                  ___mulp32eds3
                   0x0012c2                  _BLINKSPEED
                   0x0012c4                  _MenuData
-                  0x003818                  _CheckSum
-                  0x00385a                  _Interrupt_Check
-                  0x003a94                  _Read_EEPROM_Data
-                  0x003bc8                  _Volt_calculation
-                  0x003cea                  _Volt_Assign
-                  0x003d44                  _CalcLRC
-                  0x003d8e                  _Periodic_Report_Assign
-                  0x003ea4                  _Latched_Report_Assign
-                  0x003f44                  _SMS_Alert
-                  0x004844                  _ProtocolDump
-                  0x004ddc                  _PC_Dump
-                  0x005014                  _Calibration_Dump
-                  0x0051b2                  _Calf_Volt
-                  0x0051fc                  _Calc_Volt
-                  0x005260                  _Volt_Calc
-                  0x005418                  _Show_Volt
-                  0x005466                  _LastCalibRecord
-                  0x005510                  _LastCalibStore
-                  0x00554e                  _LasttareRecord
-                  0x0055f8                  _LasttareStore
-                  0x005636                  _ORDisplay
-                  0x0057ca                  _WeightDisplay
-                  0x0059e0                  _GetStableWt
-                  0x0059e6                  _Do_Stble_CaptureWeight
-                  0x005acc                  _Wt_Array_Reset
-                  0x005af4                  _Do_CaptureWeight
-                  0x005afa                  _Status_Write
-                  0x005b16                  _PayloadProcess_ParkingBreak
-                  0x005f16                  _PayloadProcess_BodyUp
-                  0x006192                  _RecordStorage
-                  0x006218                  _StoreRecord
-                  0x0063be                  _Print_record
-                  0x0065d8                  _Print_CRLF
-                  0x0065fc                  _ADC_Init
-                  0x00665e                  _Reset_Cum_Trip
-                  0x0066bc                  _Power_On_KeypressFunction
-                  0x0067a0                  _LED_ON_OFF
-                  0x0067d0                  _RangeOutput
-                  0x0068e6                  _TareFunction
-                  0x006a4c                  _Voltage_Calib_init
-                  0x006a98                  _voltage_Calib_write
-                  0x006b6a                  _Weight_Calculation
-                  0x006b72                  _assigning_values
-                  0x006bc2                  _Volt_to_count_Conv
-                  0x006c1c                  _Nop
-                  0x006c22                  _DoMenu
-                  0x007532                  _DOPCheck
-                  0x00764e                  _DIPCheck
-                  0x0076a8                  _KeypadTest
-                  0x007702                  _DisplayCheck
-                  0x0077a8                  _DiagnosticCounts
-                  0x0077f4                  _ShowAD
-                  0x007988                  _InputLogic_Multiply_Select
-                  0x007a6a                  _Getvalues_mA
-                  0x007c08                  _PutDp
-                  0x007cfc                  _GetData
-                  0x0080ea                  _GetCombo
-                  0x008206                  _GetPassword
-                  0x008280                  _PowerOn_Read
-                  0x008626                  _PortCheck
-                  0x008704                  _OptionChooseFunction
-                  0x00875e                  _Confirmation_Function
-                  0x00887e                  _done_Display
-                  0x008896                  _Calibration_Backup
-                  0x008bea                  _Voltage_calib_read
-                  0x008c9a                  _LoadDefault
-                  0x008e4a                  _Init_AppSetting
-                  0x00901e                  _Init_GenSetting
-                  0x00907a                  _Restore_Calib_Backup
-                  0x0093ae                  _ChannelSelect
-                  0x0094e4                  _ChannelConfiguration
-                  0x0095ac                  _Numeric_Entry
-                  0x0096f4                  _Get_Phone_No
-                  0x0098f6                  _View_SMS_Count
-                  0x0099b4                  _View_GPRS_LIMIT
-                  0x009a9e                  _Put_DecimalPoint_Display
-                  0x009bae                  _Can_Init
-                  0x009e28                  _CAN_ID
-                  0x009f44                  _CAN_Send
-                  0x00a050                  _extractInt
-                  0x00a078                  _StoreRcvdData
-                  0x00a0ca                  _InerruptCheck_CAN_ID
-                  0x00a656                  _SendCANdata
-                  0x00a688                  _ClearRx_CAN_ID
-                  0x00a730                  _CANDataFlow
-                  0x00a7b6                  _Tx_CANReport_Generate
-                  0x00abce                  _Tx_LatestRec_Details
-                  0x00ad38                  _LSBByte
-                  0x00ad48                  _MSBByte
-                  0x00ad56                  _From2Bytes
-                  0x00ad74                  _RxMoveData
-                  0x00ae42                  _RequestInfo
-                  0x00af4a                  _USB_Print_Check
-                  0x00afa8                  _Transfer_Complete_Check
-                  0x00afd4                  _WaitDisplay
-                  0x00afee                  _USB_RTS_Check
-                  0x00b03a                  _USB_Check
-                  0x00b09e                  _Header_unitprint
-                  0x00b4f2                  _CurDate_assign
-                  0x00b560                  _Record_Read_Function
-                  0x00b5d0                  _Record_Send_Function
-                  0x00b852                  _PrintReport_USB
-                  0x00bbe8                  _Dateserial_Entry
-                  0x00bd96                  _PrintReport_Rs232
-                  0x00bf12                  _USB_Log
-                  0x00bf5e                  _PrintOption
-                  0x00bfea                  _Selection_Fun
-                  0x00c022                  _Init_SCL_As_Output
-                  0x00c02a                  _Set_SDA_As_Output
-                  0x00c032                  _Set_SDA_As_Input
-                  0x00c03a                  _IICClockDelay
-                  0x00c050                  _StartBit
-                  0x00c068                  _SlaveAck
-                  0x00c092                  _SlaveNoAck
-                  0x00c0a6                  _SendOneByteIIC
-                  0x00c0de                  _StopBit
-                  0x00c0f0                  _PollAck
-                  0x00c116                  _WriteByteRTC
-                  0x00c138                  _WriteToRTC_Time
-                  0x00c16e                  _WriteToRTC_Date
-                  0x00c1b6                  _WriteToRtcData
-                  0x00c1c8                  _AsciitoBcd
-                  0x00c1ec                  _ReadOneByteIIC
-                  0x00c22a                  _ReadByteRTC
-                  0x00c252                  _BcdtoBinary
-                  0x00c278                  _BinaryToBCD
-                  0x00c2ae                  _SetDate
-                  0x00c2d4                  _SetTime
-                  0x00c306                  _ReadClock24Hr
-                  0x00c36a                  _ReadClock12Hr
-                  0x00c3ec                  _ReadDate
-                  0x00c45e                  _ReadRTC_DateTime
-                  0x00c468                  _GetRTCData
-                  0x00c73c                  _Set_Date
-                  0x00c7ee                  _Set_Time
-                  0x00c898                  _RTC_Init
-                  0x00c90e                  _PowerOnRTC
-                  0x00c9c8                  _RTC_Check
-                  0x00ca4e                  _Get_Hr_min_Sec
-                  0x00cdd0                  _Init_Oscillator
-                  0x00ce06                  _main
-                  0x00cf58                  _Keyfunction
-                  0x00cfb8                  _PrintResetOption
-                  0x00d020                  _Reply_NameChange
-                  0x00d080                  _namechange_via_RS232
-                  0x00d0cc                  _Record_Management
-                  0x00d2ae                  _MainScreenDisplay
-                  0x00d418                  _Delay
-                  0x00d432                  _ReadADCCounts
-                  0x00d4ca                  _PowerOn
-                  0x00d514                  _Initialise_Ports
-                  0x00d542                  _Init_Interrupt
-                  0x00d564                  _Com1Init
-                  0x00d5ba                  _Com2Init
-                  0x00d690                  _UART_Config
-                  0x00d69e                  _Delay_ms
-                  0x00d6b4                  _Com1Bytesend
-                  0x00d6cc                  _Com1StringSend
-                  0x00d6f2                  _Com2Bytesend
-                  0x00d70a                  _Com2StringSend
-                  0x00d72c                  _PrintChar
-                  0x00d762                  _PrintCRLF
-                  0x00d79e                  _GetLSB
-                  0x00d7aa                  _GetMSB
-                  0x00d7b8                  _CalcCRC
-                  0x00d828                  _BytesToBits_SET
-                  0x00d85e                  _PowerOn_SetBit
-                  0x00d874                  _GetAdc
-                  0x00d912                  _AverageADC
-                  0x00d964                  _CalcADC
-                  0x00dc78                  _RoundOff
-                  0x00dcca                  _Weight_Calc
-                  0x00e1ac                  _GPRS_Status_Disp
-                  0x00e2a4                  _GPRS_Status_Read
-                  0x00e3b4                  _GPRS_Display
-                  0x00e4a8                  _Rx_ClearVar
-                  0x00e4ba                  _GPRS_Reset_Function
-                  0x00e694                  _Operator_Selector
-                  0x00e8d4                  _InitLCDPortIO
-                  0x00e8e2                  _LcdDisplay
-                  0x00e94c                  _ClearLcdDisplay
-                  0x00e988                  _SendDataToLCD
-                  0x00ea62                  _LCDDelay
-                  0x00ea7e                  _Busy
-                  0x00eb82                  _InitLCDDisplay
-                  0x00edc6                  _TwoLineDisplay
-                  0x00edea                  _Rec_Count_read
-                  0x00ee4e                  _FIFO_RecordReset
-                  0x00ee7e                  _FIFO_Rec_Storage
-                  0x00ef14                  _FIFO_Rec_Retrival
-                  0x00ef70                  _Record_Print
-                  0x00f01a                  _FIFO_Rec_Retrival_Key
-                  0x00f268                  _FRAMInit
-                  0x00f286                  _FRAMDelay
-                  0x00f28c                  _SerialClock
-                  0x00f296                  _Send_FRAM
-                  0x00f2c8                  _WriteEnable_Cmd
-                  0x00f2d6                  _SendAddress_FRAM
-                  0x00f314                  _Read_FRAM
-                  0x00f34e                  _Write_E2
-                  0x00f392                  _Read_E2
-                  0x00f3d4                  _KeySense
-                  0x00f53c                  _Delay_10us
-                  0x00f568                  _Delay1_1s
+                  0x003800                  _CheckSum
+                  0x003842                  _Interrupt_Check
+                  0x003a7c                  _Read_EEPROM_Data
+                  0x003bb0                  _Volt_calculation
+                  0x003cd2                  _Volt_Assign
+                  0x003d2c                  _CalcLRC
+                  0x003d76                  _Periodic_Report_Assign
+                  0x003e94                  _Latched_Report_Assign
+                  0x003f34                  _SMS_Alert
+                  0x004834                  _ProtocolDump
+                  0x004dcc                  _PC_Dump
+                  0x005004                  _Calibration_Dump
+                  0x0051a2                  _Calf_Volt
+                  0x0051ec                  _Calc_Volt
+                  0x005250                  _Volt_Calc
+                  0x005408                  _Show_Volt
+                  0x005456                  _LastCalibRecord
+                  0x005500                  _LastCalibStore
+                  0x00553e                  _LasttareRecord
+                  0x0055e8                  _LasttareStore
+                  0x005626                  _ORDisplay
+                  0x0057ba                  _WeightDisplay
+                  0x0059d0                  _GetStableWt
+                  0x0059d6                  _Do_Stble_CaptureWeight
+                  0x005abc                  _Wt_Array_Reset
+                  0x005ae4                  _Do_CaptureWeight
+                  0x005aea                  _Status_Write
+                  0x005b06                  _PayloadProcess_ParkingBreak
+                  0x005f06                  _PayloadProcess_BodyUp
+                  0x006182                  _RecordStorage
+                  0x006208                  _StoreRecord
+                  0x0063ae                  _Print_record
+                  0x0065c8                  _Print_CRLF
+                  0x0065ec                  _ADC_Init
+                  0x00664e                  _Reset_Cum_Trip
+                  0x0066ac                  _Power_On_KeypressFunction
+                  0x006790                  _LED_ON_OFF
+                  0x0067c0                  _RangeOutput
+                  0x0068d6                  _TareFunction
+                  0x006a3c                  _Voltage_Calib_init
+                  0x006a88                  _voltage_Calib_write
+                  0x006b5a                  _Weight_Calculation
+                  0x006b62                  _assigning_values
+                  0x006bb2                  _Volt_to_count_Conv
+                  0x006c0c                  _Nop
+                  0x006c12                  _DoMenu
+                  0x007522                  _DOPCheck
+                  0x00763e                  _DIPCheck
+                  0x007698                  _KeypadTest
+                  0x0076f2                  _DisplayCheck
+                  0x007798                  _DiagnosticCounts
+                  0x0077e4                  _ShowAD
+                  0x007978                  _InputLogic_Multiply_Select
+                  0x007a5a                  _Getvalues_mA
+                  0x007bf8                  _PutDp
+                  0x007cec                  _GetData
+                  0x0080da                  _GetCombo
+                  0x0081f6                  _GetPassword
+                  0x008270                  _PowerOn_Read
+                  0x008616                  _PortCheck
+                  0x0086f4                  _OptionChooseFunction
+                  0x00874e                  _Confirmation_Function
+                  0x00886e                  _done_Display
+                  0x008886                  _Calibration_Backup
+                  0x008bda                  _Voltage_calib_read
+                  0x008c8a                  _LoadDefault
+                  0x008e3a                  _Init_AppSetting
+                  0x00900e                  _Init_GenSetting
+                  0x00906a                  _Restore_Calib_Backup
+                  0x00939e                  _ChannelSelect
+                  0x0094d4                  _ChannelConfiguration
+                  0x00959c                  _Numeric_Entry
+                  0x0096e4                  _Get_Phone_No
+                  0x0098e6                  _View_SMS_Count
+                  0x0099a4                  _View_GPRS_LIMIT
+                  0x009a8e                  _Put_DecimalPoint_Display
+                  0x009b9e                  _Can_Init
+                  0x009e18                  _CAN_ID
+                  0x009f34                  _CAN_Send
+                  0x00a040                  _extractInt
+                  0x00a068                  _StoreRcvdData
+                  0x00a0ba                  _InerruptCheck_CAN_ID
+                  0x00a646                  _SendCANdata
+                  0x00a678                  _ClearRx_CAN_ID
+                  0x00a720                  _CANDataFlow
+                  0x00a7a6                  _Tx_CANReport_Generate
+                  0x00abbe                  _Tx_LatestRec_Details
+                  0x00ad28                  _LSBByte
+                  0x00ad38                  _MSBByte
+                  0x00ad46                  _From2Bytes
+                  0x00ad64                  _RxMoveData
+                  0x00ae32                  _RequestInfo
+                  0x00af3a                  _USB_Print_Check
+                  0x00af98                  _Transfer_Complete_Check
+                  0x00afc4                  _WaitDisplay
+                  0x00afde                  _USB_RTS_Check
+                  0x00b02a                  _USB_Check
+                  0x00b08e                  _Header_unitprint
+                  0x00b4e2                  _CurDate_assign
+                  0x00b550                  _Record_Read_Function
+                  0x00b5c0                  _Record_Send_Function
+                  0x00b842                  _PrintReport_USB
+                  0x00bbd8                  _Dateserial_Entry
+                  0x00bd86                  _PrintReport_Rs232
+                  0x00bf02                  _USB_Log
+                  0x00bf4e                  _PrintOption
+                  0x00bfda                  _Selection_Fun
+                  0x00c012                  _Init_SCL_As_Output
+                  0x00c01a                  _Set_SDA_As_Output
+                  0x00c022                  _Set_SDA_As_Input
+                  0x00c02a                  _IICClockDelay
+                  0x00c040                  _StartBit
+                  0x00c058                  _SlaveAck
+                  0x00c082                  _SlaveNoAck
+                  0x00c096                  _SendOneByteIIC
+                  0x00c0ce                  _StopBit
+                  0x00c0e0                  _PollAck
+                  0x00c106                  _WriteByteRTC
+                  0x00c128                  _WriteToRTC_Time
+                  0x00c15e                  _WriteToRTC_Date
+                  0x00c1a6                  _WriteToRtcData
+                  0x00c1b8                  _AsciitoBcd
+                  0x00c1dc                  _ReadOneByteIIC
+                  0x00c21a                  _ReadByteRTC
+                  0x00c242                  _BcdtoBinary
+                  0x00c268                  _BinaryToBCD
+                  0x00c29e                  _SetDate
+                  0x00c2c4                  _SetTime
+                  0x00c2f6                  _ReadClock24Hr
+                  0x00c35a                  _ReadClock12Hr
+                  0x00c3dc                  _ReadDate
+                  0x00c44e                  _ReadRTC_DateTime
+                  0x00c458                  _GetRTCData
+                  0x00c72c                  _Set_Date
+                  0x00c7de                  _Set_Time
+                  0x00c888                  _RTC_Init
+                  0x00c8fe                  _PowerOnRTC
+                  0x00c9b8                  _RTC_Check
+                  0x00ca3e                  _Get_Hr_min_Sec
+                  0x00cdc0                  _Init_Oscillator
+                  0x00cdf6                  _main
+                  0x00cf48                  _Keyfunction
+                  0x00cfa8                  _PrintResetOption
+                  0x00d010                  _Reply_NameChange
+                  0x00d070                  _namechange_via_RS232
+                  0x00d0bc                  _Record_Management
+                  0x00d2ce                  _MainScreenDisplay
+                  0x00d394                  _Delay
+                  0x00d3ae                  _ReadADCCounts
+                  0x00d446                  _PowerOn
+                  0x00d490                  _Initialise_Ports
+                  0x00d4be                  _Init_Interrupt
+                  0x00d4e0                  _Com1Init
+                  0x00d536                  _Com2Init
+                  0x00d60c                  _UART_Config
+                  0x00d61a                  _Delay_ms
+                  0x00d630                  _Com1Bytesend
+                  0x00d648                  _Com1StringSend
+                  0x00d66e                  _Com2Bytesend
+                  0x00d686                  _Com2StringSend
+                  0x00d6a8                  _PrintChar
+                  0x00d6de                  _PrintCRLF
+                  0x00d71a                  _GetLSB
+                  0x00d726                  _GetMSB
+                  0x00d734                  _CalcCRC
+                  0x00d7a4                  _BytesToBits_SET
+                  0x00d7da                  _PowerOn_SetBit
+                  0x00d7f0                  _GetAdc
+                  0x00d88e                  _AverageADC
+                  0x00d8e0                  _CalcADC
+                  0x00dbf4                  _RoundOff
+                  0x00dc46                  _Weight_Calc
+                  0x00e128                  _GPRS_Status_Disp
+                  0x00e220                  _GPRS_Status_Read
+                  0x00e330                  _GPRS_Display
+                  0x00e424                  _Rx_ClearVar
+                  0x00e436                  _GPRS_Reset_Function
+                  0x00e610                  _Operator_Selector
+                  0x00e850                  _InitLCDPortIO
+                  0x00e85e                  _LcdDisplay
+                  0x00e8c8                  _ClearLcdDisplay
+                  0x00e904                  _SendDataToLCD
+                  0x00e9de                  _LCDDelay
+                  0x00e9fa                  _Busy
+                  0x00eafe                  _InitLCDDisplay
+                  0x00ed42                  _TwoLineDisplay
+                  0x00ed66                  _Rec_Count_read
+                  0x00edca                  _FIFO_RecordReset
+                  0x00edfa                  _FIFO_Rec_Storage
+                  0x00ee90                  _FIFO_Rec_Retrival
+                  0x00eeec                  _Record_Print
+                  0x00ef96                  _FIFO_Rec_Retrival_Key
+                  0x00f1e4                  _FRAMInit
+                  0x00f202                  _FRAMDelay
+                  0x00f208                  _SerialClock
+                  0x00f212                  _Send_FRAM
+                  0x00f244                  _WriteEnable_Cmd
+                  0x00f252                  _SendAddress_FRAM
+                  0x00f290                  _Read_FRAM
+                  0x00f2ca                  _Write_E2
+                  0x00f30e                  _Read_E2
+                  0x00f350                  _KeySense
+                  0x00f4b8                  _Delay_10us
+                  0x00f4e4                  _Delay1_1s
                   0xf8000a                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x0065fc                  _ADC_Init
-                  0x00c1c8                  _AsciitoBcd
-                  0x00d912                  _AverageADC
+                  0x0065ec                  _ADC_Init
+                  0x00c1b8                  _AsciitoBcd
+                  0x00d88e                  _AverageADC
                   0x0012c2                  _BLINKSPEED
-                  0x00c252                  _BcdtoBinary
-                  0x00c278                  _BinaryToBCD
-                  0x00ea7e                  _Busy
-                  0x00d828                  _BytesToBits_SET
-                  0x00a730                  _CANDataFlow
-                  0x009e28                  _CAN_ID
-                  0x009f44                  _CAN_Send
-                  0x00d964                  _CalcADC
-                  0x00d7b8                  _CalcCRC
-                  0x003d44                  _CalcLRC
-                  0x0051fc                  _Calc_Volt
-                  0x0051b2                  _Calf_Volt
-                  0x008896                  _Calibration_Backup
-                  0x005014                  _Calibration_Dump
-                  0x009bae                  _Can_Init
-                  0x0094e4                  _ChannelConfiguration
-                  0x0093ae                  _ChannelSelect
-                  0x003818                  _CheckSum
-                  0x00e94c                  _ClearLcdDisplay
-                  0x00a688                  _ClearRx_CAN_ID
-                  0x00d6b4                  _Com1Bytesend
-                  0x00d564                  _Com1Init
-                  0x00d6cc                  _Com1StringSend
-                  0x00d6f2                  _Com2Bytesend
-                  0x00d5ba                  _Com2Init
-                  0x00d70a                  _Com2StringSend
-                  0x00875e                  _Confirmation_Function
-                  0x00b4f2                  _CurDate_assign
-                  0x00764e                  _DIPCheck
-                  0x007532                  _DOPCheck
-                  0x00bbe8                  _Dateserial_Entry
-                  0x00d418                  _Delay
-                  0x00f568                  _Delay1_1s
-                  0x00f53c                  _Delay_10us
-                  0x00d69e                  _Delay_ms
-                  0x0077a8                  _DiagnosticCounts
-                  0x007702                  _DisplayCheck
-                  0x006c22                  _DoMenu
-                  0x005af4                  _Do_CaptureWeight
-                  0x0059e6                  _Do_Stble_CaptureWeight
-                  0x00ef14                  _FIFO_Rec_Retrival
-                  0x00f01a                  _FIFO_Rec_Retrival_Key
-                  0x00ee7e                  _FIFO_Rec_Storage
-                  0x00ee4e                  _FIFO_RecordReset
-                  0x00f286                  _FRAMDelay
-                  0x00f268                  _FRAMInit
-                  0x00ad56                  _From2Bytes
-                  0x00e3b4                  _GPRS_Display
-                  0x00e4ba                  _GPRS_Reset_Function
-                  0x00e1ac                  _GPRS_Status_Disp
-                  0x00e2a4                  _GPRS_Status_Read
-                  0x00d874                  _GetAdc
-                  0x0080ea                  _GetCombo
-                  0x007cfc                  _GetData
-                  0x00d79e                  _GetLSB
-                  0x00d7aa                  _GetMSB
-                  0x008206                  _GetPassword
-                  0x00c468                  _GetRTCData
-                  0x0059e0                  _GetStableWt
-                  0x00ca4e                  _Get_Hr_min_Sec
-                  0x0096f4                  _Get_Phone_No
-                  0x007a6a                  _Getvalues_mA
-                  0x00b09e                  _Header_unitprint
-                  0x00c03a                  _IICClockDelay
-                  0x00a0ca                  _InerruptCheck_CAN_ID
-                  0x00eb82                  _InitLCDDisplay
-                  0x00e8d4                  _InitLCDPortIO
-                  0x008e4a                  _Init_AppSetting
-                  0x00901e                  _Init_GenSetting
-                  0x00d542                  _Init_Interrupt
-                  0x00cdd0                  _Init_Oscillator
-                  0x00c022                  _Init_SCL_As_Output
-                  0x00d514                  _Initialise_Ports
-                  0x007988                  _InputLogic_Multiply_Select
-                  0x00385a                  _Interrupt_Check
-                  0x00f3d4                  _KeySense
-                  0x00cf58                  _Keyfunction
-                  0x0076a8                  _KeypadTest
-                  0x00ea62                  _LCDDelay
-                  0x0067a0                  _LED_ON_OFF
-                  0x00ad38                  _LSBByte
-                  0x005466                  _LastCalibRecord
-                  0x005510                  _LastCalibStore
-                  0x00554e                  _LasttareRecord
-                  0x0055f8                  _LasttareStore
-                  0x003ea4                  _Latched_Report_Assign
-                  0x00e8e2                  _LcdDisplay
-                  0x008c9a                  _LoadDefault
-                  0x00ad48                  _MSBByte
-                  0x00d2ae                  _MainScreenDisplay
+                  0x00c242                  _BcdtoBinary
+                  0x00c268                  _BinaryToBCD
+                  0x00e9fa                  _Busy
+                  0x00d7a4                  _BytesToBits_SET
+                  0x00a720                  _CANDataFlow
+                  0x009e18                  _CAN_ID
+                  0x009f34                  _CAN_Send
+                  0x00d8e0                  _CalcADC
+                  0x00d734                  _CalcCRC
+                  0x003d2c                  _CalcLRC
+                  0x0051ec                  _Calc_Volt
+                  0x0051a2                  _Calf_Volt
+                  0x008886                  _Calibration_Backup
+                  0x005004                  _Calibration_Dump
+                  0x009b9e                  _Can_Init
+                  0x0094d4                  _ChannelConfiguration
+                  0x00939e                  _ChannelSelect
+                  0x003800                  _CheckSum
+                  0x00e8c8                  _ClearLcdDisplay
+                  0x00a678                  _ClearRx_CAN_ID
+                  0x00d630                  _Com1Bytesend
+                  0x00d4e0                  _Com1Init
+                  0x00d648                  _Com1StringSend
+                  0x00d66e                  _Com2Bytesend
+                  0x00d536                  _Com2Init
+                  0x00d686                  _Com2StringSend
+                  0x00874e                  _Confirmation_Function
+                  0x00b4e2                  _CurDate_assign
+                  0x00763e                  _DIPCheck
+                  0x007522                  _DOPCheck
+                  0x00bbd8                  _Dateserial_Entry
+                  0x00d394                  _Delay
+                  0x00f4e4                  _Delay1_1s
+                  0x00f4b8                  _Delay_10us
+                  0x00d61a                  _Delay_ms
+                  0x007798                  _DiagnosticCounts
+                  0x0076f2                  _DisplayCheck
+                  0x006c12                  _DoMenu
+                  0x005ae4                  _Do_CaptureWeight
+                  0x0059d6                  _Do_Stble_CaptureWeight
+                  0x00ee90                  _FIFO_Rec_Retrival
+                  0x00ef96                  _FIFO_Rec_Retrival_Key
+                  0x00edfa                  _FIFO_Rec_Storage
+                  0x00edca                  _FIFO_RecordReset
+                  0x00f202                  _FRAMDelay
+                  0x00f1e4                  _FRAMInit
+                  0x00ad46                  _From2Bytes
+                  0x00e330                  _GPRS_Display
+                  0x00e436                  _GPRS_Reset_Function
+                  0x00e128                  _GPRS_Status_Disp
+                  0x00e220                  _GPRS_Status_Read
+                  0x00d7f0                  _GetAdc
+                  0x0080da                  _GetCombo
+                  0x007cec                  _GetData
+                  0x00d71a                  _GetLSB
+                  0x00d726                  _GetMSB
+                  0x0081f6                  _GetPassword
+                  0x00c458                  _GetRTCData
+                  0x0059d0                  _GetStableWt
+                  0x00ca3e                  _Get_Hr_min_Sec
+                  0x0096e4                  _Get_Phone_No
+                  0x007a5a                  _Getvalues_mA
+                  0x00b08e                  _Header_unitprint
+                  0x00c02a                  _IICClockDelay
+                  0x00a0ba                  _InerruptCheck_CAN_ID
+                  0x00eafe                  _InitLCDDisplay
+                  0x00e850                  _InitLCDPortIO
+                  0x008e3a                  _Init_AppSetting
+                  0x00900e                  _Init_GenSetting
+                  0x00d4be                  _Init_Interrupt
+                  0x00cdc0                  _Init_Oscillator
+                  0x00c012                  _Init_SCL_As_Output
+                  0x00d490                  _Initialise_Ports
+                  0x007978                  _InputLogic_Multiply_Select
+                  0x003842                  _Interrupt_Check
+                  0x00f350                  _KeySense
+                  0x00cf48                  _Keyfunction
+                  0x007698                  _KeypadTest
+                  0x00e9de                  _LCDDelay
+                  0x006790                  _LED_ON_OFF
+                  0x00ad28                  _LSBByte
+                  0x005456                  _LastCalibRecord
+                  0x005500                  _LastCalibStore
+                  0x00553e                  _LasttareRecord
+                  0x0055e8                  _LasttareStore
+                  0x003e94                  _Latched_Report_Assign
+                  0x00e85e                  _LcdDisplay
+                  0x008c8a                  _LoadDefault
+                  0x00ad38                  _MSBByte
+                  0x00d2ce                  _MainScreenDisplay
                   0x0012c4                  _MenuData
-                  0x006c1c                  _Nop
-                  0x0095ac                  _Numeric_Entry
-                  0x005636                  _ORDisplay
-                  0x00e694                  _Operator_Selector
-                  0x008704                  _OptionChooseFunction
-                  0x004ddc                  _PC_Dump
-                  0x005f16                  _PayloadProcess_BodyUp
-                  0x005b16                  _PayloadProcess_ParkingBreak
-                  0x003d8e                  _Periodic_Report_Assign
-                  0x00c0f0                  _PollAck
-                  0x008626                  _PortCheck
-                  0x00d4ca                  _PowerOn
-                  0x00c90e                  _PowerOnRTC
-                  0x008280                  _PowerOn_Read
-                  0x00d85e                  _PowerOn_SetBit
-                  0x0066bc                  _Power_On_KeypressFunction
-                  0x00d762                  _PrintCRLF
-                  0x00d72c                  _PrintChar
-                  0x00bf5e                  _PrintOption
-                  0x00bd96                  _PrintReport_Rs232
-                  0x00b852                  _PrintReport_USB
-                  0x00cfb8                  _PrintResetOption
-                  0x0065d8                  _Print_CRLF
-                  0x0063be                  _Print_record
-                  0x004844                  _ProtocolDump
-                  0x007c08                  _PutDp
-                  0x009a9e                  _Put_DecimalPoint_Display
-                  0x00c9c8                  _RTC_Check
-                  0x00c898                  _RTC_Init
-                  0x0067d0                  _RangeOutput
-                  0x00d432                  _ReadADCCounts
-                  0x00c22a                  _ReadByteRTC
-                  0x00c36a                  _ReadClock12Hr
-                  0x00c306                  _ReadClock24Hr
-                  0x00c3ec                  _ReadDate
-                  0x00c1ec                  _ReadOneByteIIC
-                  0x00c45e                  _ReadRTC_DateTime
-                  0x00f392                  _Read_E2
-                  0x003a94                  _Read_EEPROM_Data
-                  0x00f314                  _Read_FRAM
-                  0x00edea                  _Rec_Count_read
-                  0x006192                  _RecordStorage
-                  0x00d0cc                  _Record_Management
-                  0x00ef70                  _Record_Print
-                  0x00b560                  _Record_Read_Function
-                  0x00b5d0                  _Record_Send_Function
-                  0x00d020                  _Reply_NameChange
-                  0x00ae42                  _RequestInfo
-                  0x00665e                  _Reset_Cum_Trip
-                  0x00907a                  _Restore_Calib_Backup
-                  0x00dc78                  _RoundOff
-                  0x00ad74                  _RxMoveData
-                  0x00e4a8                  _Rx_ClearVar
-                  0x003f44                  _SMS_Alert
-                  0x00bfea                  _Selection_Fun
-                  0x00f2d6                  _SendAddress_FRAM
-                  0x00a656                  _SendCANdata
-                  0x00e988                  _SendDataToLCD
-                  0x00c0a6                  _SendOneByteIIC
-                  0x00f296                  _Send_FRAM
-                  0x00f28c                  _SerialClock
-                  0x00c2ae                  _SetDate
-                  0x00c2d4                  _SetTime
-                  0x00c73c                  _Set_Date
-                  0x00c032                  _Set_SDA_As_Input
-                  0x00c02a                  _Set_SDA_As_Output
-                  0x00c7ee                  _Set_Time
-                  0x0077f4                  _ShowAD
-                  0x005418                  _Show_Volt
-                  0x00c068                  _SlaveAck
-                  0x00c092                  _SlaveNoAck
-                  0x00c050                  _StartBit
-                  0x005afa                  _Status_Write
-                  0x00c0de                  _StopBit
-                  0x00a078                  _StoreRcvdData
-                  0x006218                  _StoreRecord
-                  0x0068e6                  _TareFunction
-                  0x00afa8                  _Transfer_Complete_Check
-                  0x00edc6                  _TwoLineDisplay
-                  0x00a7b6                  _Tx_CANReport_Generate
-                  0x00abce                  _Tx_LatestRec_Details
-                  0x00d690                  _UART_Config
-                  0x00b03a                  _USB_Check
-                  0x00bf12                  _USB_Log
-                  0x00af4a                  _USB_Print_Check
-                  0x00afee                  _USB_RTS_Check
-                  0x0099b4                  _View_GPRS_LIMIT
-                  0x0098f6                  _View_SMS_Count
-                  0x003cea                  _Volt_Assign
-                  0x005260                  _Volt_Calc
-                  0x003bc8                  _Volt_calculation
-                  0x006bc2                  _Volt_to_count_Conv
-                  0x006a4c                  _Voltage_Calib_init
-                  0x008bea                  _Voltage_calib_read
-                  0x00afd4                  _WaitDisplay
-                  0x0057ca                  _WeightDisplay
-                  0x00dcca                  _Weight_Calc
-                  0x006b6a                  _Weight_Calculation
-                  0x00c116                  _WriteByteRTC
-                  0x00f2c8                  _WriteEnable_Cmd
-                  0x00c16e                  _WriteToRTC_Date
-                  0x00c138                  _WriteToRTC_Time
-                  0x00c1b6                  _WriteToRtcData
-                  0x00f34e                  _Write_E2
-                  0x005acc                  _Wt_Array_Reset
+                  0x006c0c                  _Nop
+                  0x00959c                  _Numeric_Entry
+                  0x005626                  _ORDisplay
+                  0x00e610                  _Operator_Selector
+                  0x0086f4                  _OptionChooseFunction
+                  0x004dcc                  _PC_Dump
+                  0x005f06                  _PayloadProcess_BodyUp
+                  0x005b06                  _PayloadProcess_ParkingBreak
+                  0x003d76                  _Periodic_Report_Assign
+                  0x00c0e0                  _PollAck
+                  0x008616                  _PortCheck
+                  0x00d446                  _PowerOn
+                  0x00c8fe                  _PowerOnRTC
+                  0x008270                  _PowerOn_Read
+                  0x00d7da                  _PowerOn_SetBit
+                  0x0066ac                  _Power_On_KeypressFunction
+                  0x00d6de                  _PrintCRLF
+                  0x00d6a8                  _PrintChar
+                  0x00bf4e                  _PrintOption
+                  0x00bd86                  _PrintReport_Rs232
+                  0x00b842                  _PrintReport_USB
+                  0x00cfa8                  _PrintResetOption
+                  0x0065c8                  _Print_CRLF
+                  0x0063ae                  _Print_record
+                  0x004834                  _ProtocolDump
+                  0x007bf8                  _PutDp
+                  0x009a8e                  _Put_DecimalPoint_Display
+                  0x00c9b8                  _RTC_Check
+                  0x00c888                  _RTC_Init
+                  0x0067c0                  _RangeOutput
+                  0x00d3ae                  _ReadADCCounts
+                  0x00c21a                  _ReadByteRTC
+                  0x00c35a                  _ReadClock12Hr
+                  0x00c2f6                  _ReadClock24Hr
+                  0x00c3dc                  _ReadDate
+                  0x00c1dc                  _ReadOneByteIIC
+                  0x00c44e                  _ReadRTC_DateTime
+                  0x00f30e                  _Read_E2
+                  0x003a7c                  _Read_EEPROM_Data
+                  0x00f290                  _Read_FRAM
+                  0x00ed66                  _Rec_Count_read
+                  0x006182                  _RecordStorage
+                  0x00d0bc                  _Record_Management
+                  0x00eeec                  _Record_Print
+                  0x00b550                  _Record_Read_Function
+                  0x00b5c0                  _Record_Send_Function
+                  0x00d010                  _Reply_NameChange
+                  0x00ae32                  _RequestInfo
+                  0x00664e                  _Reset_Cum_Trip
+                  0x00906a                  _Restore_Calib_Backup
+                  0x00dbf4                  _RoundOff
+                  0x00ad64                  _RxMoveData
+                  0x00e424                  _Rx_ClearVar
+                  0x003f34                  _SMS_Alert
+                  0x00bfda                  _Selection_Fun
+                  0x00f252                  _SendAddress_FRAM
+                  0x00a646                  _SendCANdata
+                  0x00e904                  _SendDataToLCD
+                  0x00c096                  _SendOneByteIIC
+                  0x00f212                  _Send_FRAM
+                  0x00f208                  _SerialClock
+                  0x00c29e                  _SetDate
+                  0x00c2c4                  _SetTime
+                  0x00c72c                  _Set_Date
+                  0x00c022                  _Set_SDA_As_Input
+                  0x00c01a                  _Set_SDA_As_Output
+                  0x00c7de                  _Set_Time
+                  0x0077e4                  _ShowAD
+                  0x005408                  _Show_Volt
+                  0x00c058                  _SlaveAck
+                  0x00c082                  _SlaveNoAck
+                  0x00c040                  _StartBit
+                  0x005aea                  _Status_Write
+                  0x00c0ce                  _StopBit
+                  0x00a068                  _StoreRcvdData
+                  0x006208                  _StoreRecord
+                  0x0068d6                  _TareFunction
+                  0x00af98                  _Transfer_Complete_Check
+                  0x00ed42                  _TwoLineDisplay
+                  0x00a7a6                  _Tx_CANReport_Generate
+                  0x00abbe                  _Tx_LatestRec_Details
+                  0x00d60c                  _UART_Config
+                  0x00b02a                  _USB_Check
+                  0x00bf02                  _USB_Log
+                  0x00af3a                  _USB_Print_Check
+                  0x00afde                  _USB_RTS_Check
+                  0x0099a4                  _View_GPRS_LIMIT
+                  0x0098e6                  _View_SMS_Count
+                  0x003cd2                  _Volt_Assign
+                  0x005250                  _Volt_Calc
+                  0x003bb0                  _Volt_calculation
+                  0x006bb2                  _Volt_to_count_Conv
+                  0x006a3c                  _Voltage_Calib_init
+                  0x008bda                  _Voltage_calib_read
+                  0x00afc4                  _WaitDisplay
+                  0x0057ba                  _WeightDisplay
+                  0x00dc46                  _Weight_Calc
+                  0x006b5a                  _Weight_Calculation
+                  0x00c106                  _WriteByteRTC
+                  0x00f244                  _WriteEnable_Cmd
+                  0x00c15e                  _WriteToRTC_Date
+                  0x00c128                  _WriteToRTC_Time
+                  0x00c1a6                  _WriteToRtcData
+                  0x00f2ca                  _Write_E2
+                  0x005abc                  _Wt_Array_Reset
                   0x000624                  __ADCInterrupt
                   0x0001c8                  __C1Interrupt
                   0x000290                  __C2Interrupt
@@ -1542,19 +1544,19 @@ External Symbols in Program Memory (by name):
                   0x000100                  __resetPRI
                   0x000c24                  __sprintf_cdnopuxX
                   0x000c62                  __vfprintf_cdnopuxX
-                  0x006b72                  _assigning_values
+                  0x006b62                  _assigning_values
                   0x000b10                  _atoi
                   0x000b4e                  _atol
-                  0x00887e                  _done_Display
-                  0x00a050                  _extractInt
-                  0x00ce06                  _main
+                  0x00886e                  _done_Display
+                  0x00a040                  _extractInt
+                  0x00cdf6                  _main
                   0x000ba4                  _memcpy
                   0x000bb2                  _memmove
                   0x000bd6                  _memset
-                  0x00d080                  _namechange_via_RS232
+                  0x00d070                  _namechange_via_RS232
                   0x000be4                  _strncmp
                   0x000c02                  _strncpy
-                  0x006a98                  _voltage_Calib_write
+                  0x006a88                  _voltage_Calib_write
 
 Memory Configuration
 
@@ -1784,7 +1786,7 @@ __FSS
 
 __FGS             0xf8000a          0x2
  *(__FGS.sec*)
- __FGS.sec        0xf8000a          0x2 /CW/_FGSPc
+ __FGS.sec        0xf8000a          0x2 /CW/_FGSðùH
                   0xf8000a                  __FGS.sec
 
 __FICD
@@ -1799,21 +1801,21 @@ userdata
 .comment
  *(.comment)
 
-.debug_info       0x000000      0x152f4
+.debug_info       0x000000      0x1533b
  *(.debug_info)
- .debug_info      0x000000       0x375e build/default/production/Application.o
- .debug_info      0x00375e       0x4415 build/default/production/CAN_Func.o
- .debug_info      0x007b73        0x689 build/default/production/E2C_1024.o
- .debug_info      0x0081fc        0x4af build/default/production/FIFO_Storage.o
- .debug_info      0x0086ab        0x9c0 build/default/production/GPRS_App.o
- .debug_info      0x00906b        0x405 build/default/production/Keypad.o
- .debug_info      0x009470        0x5eb build/default/production/LCD_DISP_.o
- .debug_info      0x009a5b       0x2ead build/default/production/Menu.o
- .debug_info      0x00c908       0x578d build/default/production/PayLoadCU.o
- .debug_info      0x012095        0xe98 build/default/production/RTC.o
- .debug_info      0x012f2d        0x2e7 build/default/production/Timer.o
- .debug_info      0x013214        0x9e3 build/default/production/WeightCalc.o
- .debug_info      0x013bf7       0x16fd build/default/production/vincUSB.o
+ .debug_info      0x000000       0x3784 build/default/production/Application.o
+ .debug_info      0x003784       0x4415 build/default/production/CAN_Func.o
+ .debug_info      0x007b99        0x689 build/default/production/E2C_1024.o
+ .debug_info      0x008222        0x4af build/default/production/FIFO_Storage.o
+ .debug_info      0x0086d1        0x9c0 build/default/production/GPRS_App.o
+ .debug_info      0x009091        0x405 build/default/production/Keypad.o
+ .debug_info      0x009496        0x5eb build/default/production/LCD_DISP_.o
+ .debug_info      0x009a81       0x2ead build/default/production/Menu.o
+ .debug_info      0x00c92e       0x57ae build/default/production/PayLoadCU.o
+ .debug_info      0x0120dc        0xe98 build/default/production/RTC.o
+ .debug_info      0x012f74        0x2e7 build/default/production/Timer.o
+ .debug_info      0x01325b        0x9e3 build/default/production/WeightCalc.o
+ .debug_info      0x013c3e       0x16fd build/default/production/vincUSB.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000       0x19cc
@@ -1833,24 +1835,24 @@ userdata
  .debug_abbrev    0x001590        0x19d build/default/production/WeightCalc.o
  .debug_abbrev    0x00172d        0x29f build/default/production/vincUSB.o
 
-.debug_line       0x000000       0x255e
+.debug_line       0x000000       0x255b
  *(.debug_line)
- .debug_line      0x000000        0x7b1 build/default/production/Application.o
- .debug_line      0x0007b1        0x3e0 build/default/production/CAN_Func.o
- .debug_line      0x000b91         0x1a build/default/production/Default_Functions.o
- .debug_line      0x000bab        0x129 build/default/production/E2C_1024.o
- .debug_line      0x000cd4         0xa7 build/default/production/FIFO_Storage.o
- .debug_line      0x000d7b        0x156 build/default/production/GPRS_App.o
- .debug_line      0x000ed1        0x108 build/default/production/Keypad.o
- .debug_line      0x000fd9        0x1a6 build/default/production/LCD_DISP_.o
- .debug_line      0x00117f        0x7bf build/default/production/Menu.o
- .debug_line      0x00193e        0x378 build/default/production/PayLoadCU.o
- .debug_line      0x001cb6        0x30e build/default/production/RTC.o
- .debug_line      0x001fc4         0xe4 build/default/production/Timer.o
- .debug_line      0x0020a8        0x161 build/default/production/WeightCalc.o
- .debug_line      0x002209        0x355 build/default/production/vincUSB.o
+ .debug_line      0x000000        0x7b3 build/default/production/Application.o
+ .debug_line      0x0007b3        0x3e0 build/default/production/CAN_Func.o
+ .debug_line      0x000b93         0x1a build/default/production/Default_Functions.o
+ .debug_line      0x000bad        0x129 build/default/production/E2C_1024.o
+ .debug_line      0x000cd6         0xa7 build/default/production/FIFO_Storage.o
+ .debug_line      0x000d7d        0x156 build/default/production/GPRS_App.o
+ .debug_line      0x000ed3        0x108 build/default/production/Keypad.o
+ .debug_line      0x000fdb        0x1a6 build/default/production/LCD_DISP_.o
+ .debug_line      0x001181        0x7bf build/default/production/Menu.o
+ .debug_line      0x001940        0x373 build/default/production/PayLoadCU.o
+ .debug_line      0x001cb3        0x30e build/default/production/RTC.o
+ .debug_line      0x001fc1         0xe4 build/default/production/Timer.o
+ .debug_line      0x0020a5        0x161 build/default/production/WeightCalc.o
+ .debug_line      0x002206        0x355 build/default/production/vincUSB.o
 
-.debug_frame      0x000000       0x1fce
+.debug_frame      0x000000       0x1fc6
  *(.debug_frame)
  .debug_frame     0x000000        0x7b8 build/default/production/Application.o
  .debug_frame     0x0007b8        0x238 build/default/production/CAN_Func.o
@@ -1860,27 +1862,27 @@ userdata
  .debug_frame     0x000ce2         0x2e build/default/production/Keypad.o
  .debug_frame     0x000d10         0xe4 build/default/production/LCD_DISP_.o
  .debug_frame     0x000df4        0x49a build/default/production/Menu.o
- .debug_frame     0x00128e        0x4b4 build/default/production/PayLoadCU.o
- .debug_frame     0x001742        0x39a build/default/production/RTC.o
- .debug_frame     0x001adc         0x48 build/default/production/Timer.o
- .debug_frame     0x001b24         0xa0 build/default/production/WeightCalc.o
- .debug_frame     0x001bc4        0x40a build/default/production/vincUSB.o
+ .debug_frame     0x00128e        0x4ac build/default/production/PayLoadCU.o
+ .debug_frame     0x00173a        0x39a build/default/production/RTC.o
+ .debug_frame     0x001ad4         0x48 build/default/production/Timer.o
+ .debug_frame     0x001b1c         0xa0 build/default/production/WeightCalc.o
+ .debug_frame     0x001bbc        0x40a build/default/production/vincUSB.o
 
-.debug_str        0x000000       0x177c
+.debug_str        0x000000       0x179c
  *(.debug_str)
- .debug_str       0x000000        0x4b7 build/default/production/Application.o
- .debug_str       0x0004b7        0x6b2 build/default/production/CAN_Func.o
- .debug_str       0x000b69         0x30 build/default/production/E2C_1024.o
- .debug_str       0x000b99         0x15 build/default/production/FIFO_Storage.o
- .debug_str       0x000bae         0xaf build/default/production/GPRS_App.o
- .debug_str       0x000c5d         0x1f build/default/production/Keypad.o
- .debug_str       0x000c7c         0x16 build/default/production/LCD_DISP_.o
- .debug_str       0x000c92        0x318 build/default/production/Menu.o
- .debug_str       0x000faa        0x51c build/default/production/PayLoadCU.o
- .debug_str       0x0014c6         0xc4 build/default/production/RTC.o
- .debug_str       0x00158a         0x13 build/default/production/Timer.o
- .debug_str       0x00159d         0x77 build/default/production/WeightCalc.o
- .debug_str       0x001614        0x168 build/default/production/vincUSB.o
+ .debug_str       0x000000        0x4c7 build/default/production/Application.o
+ .debug_str       0x0004c7        0x6b2 build/default/production/CAN_Func.o
+ .debug_str       0x000b79         0x30 build/default/production/E2C_1024.o
+ .debug_str       0x000ba9         0x15 build/default/production/FIFO_Storage.o
+ .debug_str       0x000bbe         0xaf build/default/production/GPRS_App.o
+ .debug_str       0x000c6d         0x1f build/default/production/Keypad.o
+ .debug_str       0x000c8c         0x16 build/default/production/LCD_DISP_.o
+ .debug_str       0x000ca2        0x318 build/default/production/Menu.o
+ .debug_str       0x000fba        0x52c build/default/production/PayLoadCU.o
+ .debug_str       0x0014e6         0xc4 build/default/production/RTC.o
+ .debug_str       0x0015aa         0x13 build/default/production/Timer.o
+ .debug_str       0x0015bd         0x77 build/default/production/WeightCalc.o
+ .debug_str       0x001634        0x168 build/default/production/vincUSB.o
 
 .debug_loc
  *(.debug_loc)
@@ -1889,7 +1891,7 @@ userdata
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000       0x283b
+                  0x000000       0x284f
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000        0x623 build/default/production/Application.o
@@ -1908,15 +1910,15 @@ userdata
  .debug_pubnames
                   0x000e37        0x67f build/default/production/Menu.o
  .debug_pubnames
-                  0x0014b6        0xebb build/default/production/PayLoadCU.o
+                  0x0014b6        0xecf build/default/production/PayLoadCU.o
  .debug_pubnames
-                  0x002371        0x224 build/default/production/RTC.o
+                  0x002385        0x224 build/default/production/RTC.o
  .debug_pubnames
-                  0x002595         0x2f build/default/production/Timer.o
+                  0x0025a9         0x2f build/default/production/Timer.o
  .debug_pubnames
-                  0x0025c4         0x70 build/default/production/WeightCalc.o
+                  0x0025d8         0x70 build/default/production/WeightCalc.o
  .debug_pubnames
-                  0x002634        0x207 build/default/production/vincUSB.o
+                  0x002648        0x207 build/default/production/vincUSB.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -2953,7 +2955,7 @@ LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libc-elf.a
 END GROUP
 OUTPUT(dist/default/production/ReachStacker1.0.18.X.production.elf elf32-pic30)
-LOAD /CW/_FGSPc
+LOAD /CW/_FGSðùH
 LOAD default_isr
 LOAD data_init
 
@@ -3240,7 +3242,8 @@ __c30_signature
                     0x095e                  _TimeoutCounter
                     0x0962                  _TimeOut_Cnt2
                     0x0966                  _TimeOut_Cnt3
-                    0x096a                  _Received_Char
+                    0x096a                  _Run_Time_Update
+                    0x096b                  _Received_Char
  .nbss              0x096c         0x7e build/default/production/Application.o
                     0x096c                  _DisplayFlag
                     0x096e                  _Enb_Volt
@@ -3621,238 +3624,238 @@ __c30_signature
  .ivt._INT4Interrupt
                   0x00005e          0x2 build/default/production/PayLoadCU.o
 
-.const              0x92c2       0x2556 load address 0x0012c2  
+.const              0x92c2       0x253e load address 0x0012c2  
  .const             0x92c2       0x1660 build/default/production/Menu.o
                     0x92c2                  _BLINKSPEED
                     0x92c4                  _MenuData
  .const             0xa922        0x662 build/default/production/Application.o
  .const             0xaf84        0x3b8 build/default/production/vincUSB.o
  .const             0xb33c        0x2a4 build/default/production/GPRS_App.o
- .const             0xb5e0        0x104 build/default/production/PayLoadCU.o
- .const             0xb6e4         0xf8 build/default/production/RTC.o
- .const             0xb7dc         0x2a build/default/production/FIFO_Storage.o
- .const             0xb806         0x12 build/default/production/LCD_DISP_.o
+ .const             0xb5e0         0xf8 build/default/production/RTC.o
+ .const             0xb6d8         0xec build/default/production/PayLoadCU.o
+ .const             0xb7c4         0x2a build/default/production/FIFO_Storage.o
+ .const             0xb7ee         0x12 build/default/production/LCD_DISP_.o
 
-.text             0x003818       0xb85c
- .text            0x003818       0x3404 build/default/production/Application.o
-                  0x003818                  _CheckSum
-                  0x00385a                  _Interrupt_Check
-                  0x003a94                  _Read_EEPROM_Data
-                  0x003bc8                  _Volt_calculation
-                  0x003cea                  _Volt_Assign
-                  0x003d44                  _CalcLRC
-                  0x003d8e                  _Periodic_Report_Assign
-                  0x003ea4                  _Latched_Report_Assign
-                  0x003f44                  _SMS_Alert
-                  0x004844                  _ProtocolDump
-                  0x004ddc                  _PC_Dump
-                  0x005014                  _Calibration_Dump
-                  0x0051b2                  _Calf_Volt
-                  0x0051fc                  _Calc_Volt
-                  0x005260                  _Volt_Calc
-                  0x005418                  _Show_Volt
-                  0x005466                  _LastCalibRecord
-                  0x005510                  _LastCalibStore
-                  0x00554e                  _LasttareRecord
-                  0x0055f8                  _LasttareStore
-                  0x005636                  _ORDisplay
-                  0x0057ca                  _WeightDisplay
-                  0x0059e0                  _GetStableWt
-                  0x0059e6                  _Do_Stble_CaptureWeight
-                  0x005acc                  _Wt_Array_Reset
-                  0x005af4                  _Do_CaptureWeight
-                  0x005afa                  _Status_Write
-                  0x005b16                  _PayloadProcess_ParkingBreak
-                  0x005f16                  _PayloadProcess_BodyUp
-                  0x006192                  _RecordStorage
-                  0x006218                  _StoreRecord
-                  0x0063be                  _Print_record
-                  0x0065d8                  _Print_CRLF
-                  0x0065fc                  _ADC_Init
-                  0x00665e                  _Reset_Cum_Trip
-                  0x0066bc                  _Power_On_KeypressFunction
-                  0x0067a0                  _LED_ON_OFF
-                  0x0067d0                  _RangeOutput
-                  0x0068e6                  _TareFunction
-                  0x006a4c                  _Voltage_Calib_init
-                  0x006a98                  _voltage_Calib_write
-                  0x006b6a                  _Weight_Calculation
-                  0x006b72                  _assigning_values
-                  0x006bc2                  _Volt_to_count_Conv
- .text            0x006c1c       0x2f92 build/default/production/Menu.o
-                  0x006c1c                  _Nop
-                  0x006c22                  _DoMenu
-                  0x007532                  _DOPCheck
-                  0x00764e                  _DIPCheck
-                  0x0076a8                  _KeypadTest
-                  0x007702                  _DisplayCheck
-                  0x0077a8                  _DiagnosticCounts
-                  0x0077f4                  _ShowAD
-                  0x007988                  _InputLogic_Multiply_Select
-                  0x007a6a                  _Getvalues_mA
-                  0x007c08                  _PutDp
-                  0x007cfc                  _GetData
-                  0x0080ea                  _GetCombo
-                  0x008206                  _GetPassword
-                  0x008280                  _PowerOn_Read
-                  0x008626                  _PortCheck
-                  0x008704                  _OptionChooseFunction
-                  0x00875e                  _Confirmation_Function
-                  0x00887e                  _done_Display
-                  0x008896                  _Calibration_Backup
-                  0x008bea                  _Voltage_calib_read
-                  0x008c9a                  _LoadDefault
-                  0x008e4a                  _Init_AppSetting
-                  0x00901e                  _Init_GenSetting
-                  0x00907a                  _Restore_Calib_Backup
-                  0x0093ae                  _ChannelSelect
-                  0x0094e4                  _ChannelConfiguration
-                  0x0095ac                  _Numeric_Entry
-                  0x0096f4                  _Get_Phone_No
-                  0x0098f6                  _View_SMS_Count
-                  0x0099b4                  _View_GPRS_LIMIT
-                  0x009a9e                  _Put_DecimalPoint_Display
- .text            0x009bae       0x139c build/default/production/CAN_Func.o
-                  0x009bae                  _Can_Init
-                  0x009e28                  _CAN_ID
-                  0x009f44                  _CAN_Send
-                  0x00a050                  _extractInt
-                  0x00a078                  _StoreRcvdData
-                  0x00a0ca                  _InerruptCheck_CAN_ID
-                  0x00a656                  _SendCANdata
-                  0x00a688                  _ClearRx_CAN_ID
-                  0x00a730                  _CANDataFlow
-                  0x00a7b6                  _Tx_CANReport_Generate
-                  0x00abce                  _Tx_LatestRec_Details
-                  0x00ad38                  _LSBByte
-                  0x00ad48                  _MSBByte
-                  0x00ad56                  _From2Bytes
-                  0x00ad74                  _RxMoveData
-                  0x00ae42                  _RequestInfo
- .text            0x00af4a       0x10d8 build/default/production/vincUSB.o
-                  0x00af4a                  _USB_Print_Check
-                  0x00afa8                  _Transfer_Complete_Check
-                  0x00afd4                  _WaitDisplay
-                  0x00afee                  _USB_RTS_Check
-                  0x00b03a                  _USB_Check
-                  0x00b09e                  _Header_unitprint
-                  0x00b4f2                  _CurDate_assign
-                  0x00b560                  _Record_Read_Function
-                  0x00b5d0                  _Record_Send_Function
-                  0x00b852                  _PrintReport_USB
-                  0x00bbe8                  _Dateserial_Entry
-                  0x00bd96                  _PrintReport_Rs232
-                  0x00bf12                  _USB_Log
-                  0x00bf5e                  _PrintOption
-                  0x00bfea                  _Selection_Fun
- .text            0x00c022        0xdae build/default/production/RTC.o
-                  0x00c022                  _Init_SCL_As_Output
-                  0x00c02a                  _Set_SDA_As_Output
-                  0x00c032                  _Set_SDA_As_Input
-                  0x00c03a                  _IICClockDelay
-                  0x00c050                  _StartBit
-                  0x00c068                  _SlaveAck
-                  0x00c092                  _SlaveNoAck
-                  0x00c0a6                  _SendOneByteIIC
-                  0x00c0de                  _StopBit
-                  0x00c0f0                  _PollAck
-                  0x00c116                  _WriteByteRTC
-                  0x00c138                  _WriteToRTC_Time
-                  0x00c16e                  _WriteToRTC_Date
-                  0x00c1b6                  _WriteToRtcData
-                  0x00c1c8                  _AsciitoBcd
-                  0x00c1ec                  _ReadOneByteIIC
-                  0x00c22a                  _ReadByteRTC
-                  0x00c252                  _BcdtoBinary
-                  0x00c278                  _BinaryToBCD
-                  0x00c2ae                  _SetDate
-                  0x00c2d4                  _SetTime
-                  0x00c306                  _ReadClock24Hr
-                  0x00c36a                  _ReadClock12Hr
-                  0x00c3ec                  _ReadDate
-                  0x00c45e                  _ReadRTC_DateTime
-                  0x00c468                  _GetRTCData
-                  0x00c73c                  _Set_Date
-                  0x00c7ee                  _Set_Time
-                  0x00c898                  _RTC_Init
-                  0x00c90e                  _PowerOnRTC
-                  0x00c9c8                  _RTC_Check
-                  0x00ca4e                  _Get_Hr_min_Sec
- .text            0x00cdd0        0xaa4 build/default/production/PayLoadCU.o
-                  0x00cdd0                  _Init_Oscillator
-                  0x00ce06                  _main
-                  0x00cf58                  _Keyfunction
-                  0x00cfb8                  _PrintResetOption
-                  0x00d020                  _Reply_NameChange
-                  0x00d080                  _namechange_via_RS232
-                  0x00d0cc                  _Record_Management
-                  0x00d2ae                  _MainScreenDisplay
-                  0x00d418                  _Delay
-                  0x00d432                  _ReadADCCounts
-                  0x00d4ca                  _PowerOn
-                  0x00d514                  _Initialise_Ports
-                  0x00d542                  _Init_Interrupt
-                  0x00d564                  _Com1Init
-                  0x00d5ba                  _Com2Init
-                  0x00d690                  _UART_Config
-                  0x00d69e                  _Delay_ms
-                  0x00d6b4                  _Com1Bytesend
-                  0x00d6cc                  _Com1StringSend
-                  0x00d6f2                  _Com2Bytesend
-                  0x00d70a                  _Com2StringSend
-                  0x00d72c                  _PrintChar
-                  0x00d762                  _PrintCRLF
-                  0x00d79e                  _GetLSB
-                  0x00d7aa                  _GetMSB
-                  0x00d7b8                  _CalcCRC
-                  0x00d828                  _BytesToBits_SET
-                  0x00d85e                  _PowerOn_SetBit
- .text            0x00d874        0x938 build/default/production/WeightCalc.o
-                  0x00d874                  _GetAdc
-                  0x00d912                  _AverageADC
-                  0x00d964                  _CalcADC
-                  0x00dc78                  _RoundOff
-                  0x00dcca                  _Weight_Calc
- .text            0x00e1ac        0x728 build/default/production/GPRS_App.o
-                  0x00e1ac                  _GPRS_Status_Disp
-                  0x00e2a4                  _GPRS_Status_Read
-                  0x00e3b4                  _GPRS_Display
-                  0x00e4a8                  _Rx_ClearVar
-                  0x00e4ba                  _GPRS_Reset_Function
-                  0x00e694                  _Operator_Selector
- .text            0x00e8d4        0x516 build/default/production/LCD_DISP_.o
-                  0x00e8d4                  _InitLCDPortIO
-                  0x00e8e2                  _LcdDisplay
-                  0x00e94c                  _ClearLcdDisplay
-                  0x00e988                  _SendDataToLCD
-                  0x00ea62                  _LCDDelay
-                  0x00ea7e                  _Busy
-                  0x00eb82                  _InitLCDDisplay
-                  0x00edc6                  _TwoLineDisplay
- .text            0x00edea        0x28a build/default/production/FIFO_Storage.o
-                  0x00edea                  _Rec_Count_read
-                  0x00ee4e                  _FIFO_RecordReset
-                  0x00ee7e                  _FIFO_Rec_Storage
-                  0x00ef14                  _FIFO_Rec_Retrival
-                  0x00ef70                  _Record_Print
-                  0x00f01a                  _FIFO_Rec_Retrival_Key
+.text             0x003800       0xb7f0
+ .text            0x003800       0x340c build/default/production/Application.o
+                  0x003800                  _CheckSum
+                  0x003842                  _Interrupt_Check
+                  0x003a7c                  _Read_EEPROM_Data
+                  0x003bb0                  _Volt_calculation
+                  0x003cd2                  _Volt_Assign
+                  0x003d2c                  _CalcLRC
+                  0x003d76                  _Periodic_Report_Assign
+                  0x003e94                  _Latched_Report_Assign
+                  0x003f34                  _SMS_Alert
+                  0x004834                  _ProtocolDump
+                  0x004dcc                  _PC_Dump
+                  0x005004                  _Calibration_Dump
+                  0x0051a2                  _Calf_Volt
+                  0x0051ec                  _Calc_Volt
+                  0x005250                  _Volt_Calc
+                  0x005408                  _Show_Volt
+                  0x005456                  _LastCalibRecord
+                  0x005500                  _LastCalibStore
+                  0x00553e                  _LasttareRecord
+                  0x0055e8                  _LasttareStore
+                  0x005626                  _ORDisplay
+                  0x0057ba                  _WeightDisplay
+                  0x0059d0                  _GetStableWt
+                  0x0059d6                  _Do_Stble_CaptureWeight
+                  0x005abc                  _Wt_Array_Reset
+                  0x005ae4                  _Do_CaptureWeight
+                  0x005aea                  _Status_Write
+                  0x005b06                  _PayloadProcess_ParkingBreak
+                  0x005f06                  _PayloadProcess_BodyUp
+                  0x006182                  _RecordStorage
+                  0x006208                  _StoreRecord
+                  0x0063ae                  _Print_record
+                  0x0065c8                  _Print_CRLF
+                  0x0065ec                  _ADC_Init
+                  0x00664e                  _Reset_Cum_Trip
+                  0x0066ac                  _Power_On_KeypressFunction
+                  0x006790                  _LED_ON_OFF
+                  0x0067c0                  _RangeOutput
+                  0x0068d6                  _TareFunction
+                  0x006a3c                  _Voltage_Calib_init
+                  0x006a88                  _voltage_Calib_write
+                  0x006b5a                  _Weight_Calculation
+                  0x006b62                  _assigning_values
+                  0x006bb2                  _Volt_to_count_Conv
+ .text            0x006c0c       0x2f92 build/default/production/Menu.o
+                  0x006c0c                  _Nop
+                  0x006c12                  _DoMenu
+                  0x007522                  _DOPCheck
+                  0x00763e                  _DIPCheck
+                  0x007698                  _KeypadTest
+                  0x0076f2                  _DisplayCheck
+                  0x007798                  _DiagnosticCounts
+                  0x0077e4                  _ShowAD
+                  0x007978                  _InputLogic_Multiply_Select
+                  0x007a5a                  _Getvalues_mA
+                  0x007bf8                  _PutDp
+                  0x007cec                  _GetData
+                  0x0080da                  _GetCombo
+                  0x0081f6                  _GetPassword
+                  0x008270                  _PowerOn_Read
+                  0x008616                  _PortCheck
+                  0x0086f4                  _OptionChooseFunction
+                  0x00874e                  _Confirmation_Function
+                  0x00886e                  _done_Display
+                  0x008886                  _Calibration_Backup
+                  0x008bda                  _Voltage_calib_read
+                  0x008c8a                  _LoadDefault
+                  0x008e3a                  _Init_AppSetting
+                  0x00900e                  _Init_GenSetting
+                  0x00906a                  _Restore_Calib_Backup
+                  0x00939e                  _ChannelSelect
+                  0x0094d4                  _ChannelConfiguration
+                  0x00959c                  _Numeric_Entry
+                  0x0096e4                  _Get_Phone_No
+                  0x0098e6                  _View_SMS_Count
+                  0x0099a4                  _View_GPRS_LIMIT
+                  0x009a8e                  _Put_DecimalPoint_Display
+ .text            0x009b9e       0x139c build/default/production/CAN_Func.o
+                  0x009b9e                  _Can_Init
+                  0x009e18                  _CAN_ID
+                  0x009f34                  _CAN_Send
+                  0x00a040                  _extractInt
+                  0x00a068                  _StoreRcvdData
+                  0x00a0ba                  _InerruptCheck_CAN_ID
+                  0x00a646                  _SendCANdata
+                  0x00a678                  _ClearRx_CAN_ID
+                  0x00a720                  _CANDataFlow
+                  0x00a7a6                  _Tx_CANReport_Generate
+                  0x00abbe                  _Tx_LatestRec_Details
+                  0x00ad28                  _LSBByte
+                  0x00ad38                  _MSBByte
+                  0x00ad46                  _From2Bytes
+                  0x00ad64                  _RxMoveData
+                  0x00ae32                  _RequestInfo
+ .text            0x00af3a       0x10d8 build/default/production/vincUSB.o
+                  0x00af3a                  _USB_Print_Check
+                  0x00af98                  _Transfer_Complete_Check
+                  0x00afc4                  _WaitDisplay
+                  0x00afde                  _USB_RTS_Check
+                  0x00b02a                  _USB_Check
+                  0x00b08e                  _Header_unitprint
+                  0x00b4e2                  _CurDate_assign
+                  0x00b550                  _Record_Read_Function
+                  0x00b5c0                  _Record_Send_Function
+                  0x00b842                  _PrintReport_USB
+                  0x00bbd8                  _Dateserial_Entry
+                  0x00bd86                  _PrintReport_Rs232
+                  0x00bf02                  _USB_Log
+                  0x00bf4e                  _PrintOption
+                  0x00bfda                  _Selection_Fun
+ .text            0x00c012        0xdae build/default/production/RTC.o
+                  0x00c012                  _Init_SCL_As_Output
+                  0x00c01a                  _Set_SDA_As_Output
+                  0x00c022                  _Set_SDA_As_Input
+                  0x00c02a                  _IICClockDelay
+                  0x00c040                  _StartBit
+                  0x00c058                  _SlaveAck
+                  0x00c082                  _SlaveNoAck
+                  0x00c096                  _SendOneByteIIC
+                  0x00c0ce                  _StopBit
+                  0x00c0e0                  _PollAck
+                  0x00c106                  _WriteByteRTC
+                  0x00c128                  _WriteToRTC_Time
+                  0x00c15e                  _WriteToRTC_Date
+                  0x00c1a6                  _WriteToRtcData
+                  0x00c1b8                  _AsciitoBcd
+                  0x00c1dc                  _ReadOneByteIIC
+                  0x00c21a                  _ReadByteRTC
+                  0x00c242                  _BcdtoBinary
+                  0x00c268                  _BinaryToBCD
+                  0x00c29e                  _SetDate
+                  0x00c2c4                  _SetTime
+                  0x00c2f6                  _ReadClock24Hr
+                  0x00c35a                  _ReadClock12Hr
+                  0x00c3dc                  _ReadDate
+                  0x00c44e                  _ReadRTC_DateTime
+                  0x00c458                  _GetRTCData
+                  0x00c72c                  _Set_Date
+                  0x00c7de                  _Set_Time
+                  0x00c888                  _RTC_Init
+                  0x00c8fe                  _PowerOnRTC
+                  0x00c9b8                  _RTC_Check
+                  0x00ca3e                  _Get_Hr_min_Sec
+ .text            0x00cdc0        0xa30 build/default/production/PayLoadCU.o
+                  0x00cdc0                  _Init_Oscillator
+                  0x00cdf6                  _main
+                  0x00cf48                  _Keyfunction
+                  0x00cfa8                  _PrintResetOption
+                  0x00d010                  _Reply_NameChange
+                  0x00d070                  _namechange_via_RS232
+                  0x00d0bc                  _Record_Management
+                  0x00d2ce                  _MainScreenDisplay
+                  0x00d394                  _Delay
+                  0x00d3ae                  _ReadADCCounts
+                  0x00d446                  _PowerOn
+                  0x00d490                  _Initialise_Ports
+                  0x00d4be                  _Init_Interrupt
+                  0x00d4e0                  _Com1Init
+                  0x00d536                  _Com2Init
+                  0x00d60c                  _UART_Config
+                  0x00d61a                  _Delay_ms
+                  0x00d630                  _Com1Bytesend
+                  0x00d648                  _Com1StringSend
+                  0x00d66e                  _Com2Bytesend
+                  0x00d686                  _Com2StringSend
+                  0x00d6a8                  _PrintChar
+                  0x00d6de                  _PrintCRLF
+                  0x00d71a                  _GetLSB
+                  0x00d726                  _GetMSB
+                  0x00d734                  _CalcCRC
+                  0x00d7a4                  _BytesToBits_SET
+                  0x00d7da                  _PowerOn_SetBit
+ .text            0x00d7f0        0x938 build/default/production/WeightCalc.o
+                  0x00d7f0                  _GetAdc
+                  0x00d88e                  _AverageADC
+                  0x00d8e0                  _CalcADC
+                  0x00dbf4                  _RoundOff
+                  0x00dc46                  _Weight_Calc
+ .text            0x00e128        0x728 build/default/production/GPRS_App.o
+                  0x00e128                  _GPRS_Status_Disp
+                  0x00e220                  _GPRS_Status_Read
+                  0x00e330                  _GPRS_Display
+                  0x00e424                  _Rx_ClearVar
+                  0x00e436                  _GPRS_Reset_Function
+                  0x00e610                  _Operator_Selector
+ .text            0x00e850        0x516 build/default/production/LCD_DISP_.o
+                  0x00e850                  _InitLCDPortIO
+                  0x00e85e                  _LcdDisplay
+                  0x00e8c8                  _ClearLcdDisplay
+                  0x00e904                  _SendDataToLCD
+                  0x00e9de                  _LCDDelay
+                  0x00e9fa                  _Busy
+                  0x00eafe                  _InitLCDDisplay
+                  0x00ed42                  _TwoLineDisplay
+ .text            0x00ed66        0x28a build/default/production/FIFO_Storage.o
+                  0x00ed66                  _Rec_Count_read
+                  0x00edca                  _FIFO_RecordReset
+                  0x00edfa                  _FIFO_Rec_Storage
+                  0x00ee90                  _FIFO_Rec_Retrival
+                  0x00eeec                  _Record_Print
+                  0x00ef96                  _FIFO_Rec_Retrival_Key
 
-.dinit            0x00f074        0x1f4
- .dinit           0x00f074        0x1f4 data_init
+.dinit            0x00eff0        0x1f4
+ .dinit           0x00eff0        0x1f4 data_init
 
-.text             0x00f268        0x318
- .text            0x00f268        0x16c build/default/production/E2C_1024.o
-                  0x00f268                  _FRAMInit
-                  0x00f286                  _FRAMDelay
-                  0x00f28c                  _SerialClock
-                  0x00f296                  _Send_FRAM
-                  0x00f2c8                  _WriteEnable_Cmd
-                  0x00f2d6                  _SendAddress_FRAM
-                  0x00f314                  _Read_FRAM
-                  0x00f34e                  _Write_E2
-                  0x00f392                  _Read_E2
- .text            0x00f3d4        0x168 build/default/production/Keypad.o
-                  0x00f3d4                  _KeySense
- .text            0x00f53c         0x44 build/default/production/Timer.o
-                  0x00f53c                  _Delay_10us
-                  0x00f568                  _Delay1_1s
+.text             0x00f1e4        0x318
+ .text            0x00f1e4        0x16c build/default/production/E2C_1024.o
+                  0x00f1e4                  _FRAMInit
+                  0x00f202                  _FRAMDelay
+                  0x00f208                  _SerialClock
+                  0x00f212                  _Send_FRAM
+                  0x00f244                  _WriteEnable_Cmd
+                  0x00f252                  _SendAddress_FRAM
+                  0x00f290                  _Read_FRAM
+                  0x00f2ca                  _Write_E2
+                  0x00f30e                  _Read_E2
+ .text            0x00f350        0x168 build/default/production/Keypad.o
+                  0x00f350                  _KeySense
+ .text            0x00f4b8         0x44 build/default/production/Timer.o
+                  0x00f4b8                  _Delay_10us
+                  0x00f4e4                  _Delay1_1s
